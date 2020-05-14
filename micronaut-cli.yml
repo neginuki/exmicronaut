@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: exmicronaut
+---
+testFramework: spock
+sourceLanguage: java
