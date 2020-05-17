@@ -22,8 +22,10 @@ configurations {
 
 dependencies {
     annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
+    annotationProcessor "io.micronaut:micronaut-graal"
     annotationProcessor "io.micronaut:micronaut-inject-java"
     annotationProcessor "io.micronaut:micronaut-validation"
+    compileOnly "org.graalvm.nativeimage:svm"
     implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
     implementation "io.micronaut:micronaut-http-client"
     implementation "io.micronaut:micronaut-inject"
@@ -33,6 +35,7 @@ dependencies {
     implementation "javax.annotation:javax.annotation-api"
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
+    testAnnotationProcessor "io.micronaut:micronaut-inject-java"
     testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
     testImplementation("org.spockframework:spock-core") {
         exclude group: "org.codehaus.groovy", module: "groovy-all"
