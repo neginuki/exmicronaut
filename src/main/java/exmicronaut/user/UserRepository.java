@@ -20,7 +20,7 @@ public class UserRepository {
     }
 
     public UserResource create(UserResource resource) {
-        long newId = users.keySet().stream().mapToLong(id -> id).max().orElse(1L);
+        long newId = users.keySet().stream().mapToLong(id -> id).max().orElse(0L) + 1;
         resource.id = newId;
 
         users.put(newId, resource);
